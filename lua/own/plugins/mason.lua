@@ -21,6 +21,11 @@ return {
       ensure_installed = {
         "stylua",
         "lua-language-server",
+        "roslyn",
+        "netcoredbg",
+        "json-lsp",
+        "basedpyright",
+        "ruff",
       },
     },
   },

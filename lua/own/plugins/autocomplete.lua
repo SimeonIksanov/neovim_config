@@ -1,10 +1,10 @@
 return {
   {
     "saghen/blink.cmp",
+    enabled = true,
     -- optional: provides snippets for the snippet source
     dependencies = { "rafamadriz/friendly-snippets" },
     version = "1.*",
-    enabled = true,
     opts = {
       cmdline = { enabled = false },
       completion = {

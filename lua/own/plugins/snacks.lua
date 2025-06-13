@@ -2,6 +2,7 @@
 return {
   {
     "folke/snacks.nvim",
+    enabled = true,
     priority = 1000,
     lazy = false,
     opts = {
@@ -35,8 +36,9 @@ return {
       { "<leader>fs", function() Snacks.picker.smart() end, desc = "Smart find files", },
       { "<leader>fk", function() Snacks.picker.keymaps({layout = "select"}) end, desc = "Keymaps", },
       { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files", },
-      { "<leader>fp", function() Snacks.picker.projects({ projects = { vim.fn.stdpath("config") }, patterns = {}, recent = false }) end, desc = "Projects", },
+      { "<leader>p", function() Snacks.picker.projects({ projects = { vim.fn.stdpath("config") }, patterns = {}, recent = false }) end, desc = "Projects", },
       { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent", },
+      { "<leader>fh", function() Snacks.picker.help() end, desc = "Recent", },
       -- lsp
       { "<leader>ld", function() Snacks.picker.diagnostics_buffer() end, desc = "Diagnostics: File", },
       { "<leader>lD", function() Snacks.picker.diagnostics() end, desc = "Diagnostics: File", },

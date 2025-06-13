@@ -8,7 +8,7 @@ return {
       "nsidorenco/neotest-vstest",
     },
     opts = {
-      log_level = vim.log.levels.DEBUG,
+      log_level = vim.log.levels.TRACE,
       adapters = {
         require("neotest-vstest"),
       },
