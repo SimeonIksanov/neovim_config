@@ -2,7 +2,10 @@ require("own.functions")
 
 require("own.neovide")
 require("own.options")
-require("own.powershell")
+
+if vim.loop.os_uname().sysname == "Windows" then
+  require("own.powershell")
+end
 
 require("own.lazy_init")
 

@@ -7,11 +7,13 @@ return {
       "nvim-treesitter/nvim-treesitter",
       "nsidorenco/neotest-vstest",
     },
-    opts = {
-      log_level = vim.log.levels.TRACE,
-      adapters = {
-        require("neotest-vstest"),
-      },
-    },
+    config = function()
+      require("neotest").setup({
+        log_level = vim.log.levels.TRACE,
+        adapters = {
+          require("neotest-vstest"),
+        },
+      })
+    end,
   },
 }

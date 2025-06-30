@@ -50,7 +50,7 @@ vim.opt.formatoptions:remove({ "r", "o" })
 vim.opt.foldcolumn = "0"
 vim.opt.foldenable = true
 vim.opt.foldlevel = 99
-vim.opt.foldlevelstart = 3
+vim.opt.foldlevelstart = 99
 vim.opt.foldnestmax = 4
 vim.opt.foldtext = "v:lua.custom_foldtext()"
 vim.opt.foldmethod = "expr"
