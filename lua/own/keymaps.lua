@@ -11,5 +11,5 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", {})
 
 -- vim.keymap.set({ "n", "v" }, "<leader>lf", require("conform").format, {})
 -- vim.keymap.set("n", "<S-j>", "mzJ`z")
-vim.keymap.set("v", "<S-j>", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "<S-k>", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "<M-j>", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "<M-k>", ":m '<-2<CR>gv=gv")
