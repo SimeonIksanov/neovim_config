@@ -7,6 +7,9 @@ return {
         icons_enabled = true,
         theme = "auto",
       },
+      sections = {
+        lualine_x = { "lsp_status", "encoding", "fileformat", "filetype" },
+      },
     },
   },
 }
