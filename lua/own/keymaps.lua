@@ -1,5 +1,5 @@
 vim.keymap.set("n", "<space>", "<nop>", { silent = true })
-vim.keymap.set("n", "<Esc><Esc>", "<cmd>nohlsearch<cr>", {})
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<cr>", {})
 
 vim.keymap.set("i", "jj", "<Esc>", {})
 vim.keymap.set("i", "jk", "<Esc>", {})

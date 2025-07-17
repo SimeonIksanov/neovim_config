@@ -1,11 +1,13 @@
-return {
-  capabilities = {
-    textDocument = {
-      diagnostic = {
-        dynamicRegistration = true,
-      },
+local capabilities = {
+  textDocument = {
+    diagnostic = {
+      dynamicRegistration = true,
     },
   },
+}
+capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
+return {
+  capabilities = capabilities,
   settings = {
     ["csharp|background_analysis"] = {
       ["background_analysis.dotnet_analyzer_diagnostics_scope"] = "fullSolution",
