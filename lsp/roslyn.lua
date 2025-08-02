@@ -4,6 +4,11 @@ local capabilities = {
       dynamicRegistration = true,
     },
   },
+  workspace = {
+    didChangeWatchedFiles = {
+      dynamicRegistration = false,
+    }
+  }
 }
 capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 return {

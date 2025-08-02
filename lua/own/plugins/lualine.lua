@@ -7,6 +7,23 @@ return {
         icons_enabled = true,
         theme = "auto",
       },
+      sections = {
+        lualine_c = {
+          {
+            "filename",
+            path = 1,
+          },
+        },
+        lualine_x = { "lsp_status", "encoding", "fileformat", "filetype" },
+      },
+      inactive_sessions = {
+        lualine_c = {
+          {
+            "filename",
+            path = 1,
+          },
+        },
+      },
     },
   },
 }
