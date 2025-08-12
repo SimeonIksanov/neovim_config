@@ -1,3 +1,17 @@
+local capabilities = {
+  textDocument = {
+    diagnostic = {
+      dynamicRegistration = true,
+    },
+  },
+  workspace = {
+    didChangeWatchedFiles = {
+      dynamicRegistration = false,
+    }
+  }
+}
+capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
+
 return {
   cmd = {
     "roslyn",
@@ -6,13 +20,7 @@ return {
     "--stdio"
   },
   filetypes = { "cs" },
-  capabilities = {
-    textDocument = {
-      diagnostic = {
-        dynamicRegistration = true,
-      },
-    },
-  },
+  capabilities = capabilities,
   settings = {
     ["csharp|background_analysis"] = {
       ["background_analysis.dotnet_analyzer_diagnostics_scope"] = "fullSolution",

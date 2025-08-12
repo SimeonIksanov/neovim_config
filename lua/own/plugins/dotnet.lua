@@ -7,11 +7,12 @@ return {
       -- "razor"
     },
     opts = {
-      filewatching = "roslyn",
+      filewatching = "auto",
       choose_target = nil,
       ignore_target = nil,
-      broad_search = false,
+      broad_search = true,
       lock_target = false,
+      debug = false,
     },
   },
 }

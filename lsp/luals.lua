@@ -5,7 +5,9 @@ return {
   root_markers = { ".luarc.json", ".luarc.jsonc", ".git" },
   settings = {
     Lua = {
-      globals = { "vim" },
+      diagnostics = {
+        globals = { "vim", "Snacks" },
+      },
       runtime = {
         version = "LuaJIT",
       },

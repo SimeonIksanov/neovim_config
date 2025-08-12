@@ -16,9 +16,12 @@ local function set_python_path(path)
   end
 end
 
+local capabilities = require("blink.cmp").get_lsp_capabilities()
+
 return {
   cmd = { "basedpyright-langserver", "--stdio" },
   filetypes = { "python" },
+  capabilities = capabilities,
   root_markers = {
     "pyproject.toml",
     "setup.py",

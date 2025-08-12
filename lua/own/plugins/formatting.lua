@@ -2,9 +2,9 @@ return {
   {
     "stevearc/conform.nvim",
     enabled = true,
-    init = function(_)
-      vim.o.formatexpr = "v:lua.require('conform').formatexpr()"
-    end,
+    -- init = function(_)
+    --   vim.o.formatexpr = "v:lua.require('conform').formatexpr()"
+    -- end,
     opts = {
       default_format_opts = {
         lsp_format = "fallback",
@@ -22,7 +22,14 @@ return {
       },
     },
     keys = {
-      {"<leader>lf", function() require("conform").format() end, mode = {"n", "v"}, desc = "Format document"},
-    }
+      {
+        "<leader>lf",
+        function()
+          require("conform").format()
+        end,
+        mode = { "n", "v" },
+        desc = "Format document",
+      },
+    },
   },
 }

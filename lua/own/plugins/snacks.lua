@@ -1,4 +1,4 @@
----@diagnostic disable: undefined-global
+--@diagnostic disable: undefined-global
 return {
   {
     "folke/snacks.nvim",
