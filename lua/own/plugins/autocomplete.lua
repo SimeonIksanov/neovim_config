@@ -43,8 +43,15 @@ return {
       },
       sources = {
         default = { "lsp", "path", "snippets", "buffer" },
+        providers = {
+          lsp = {
+            -- enabled = true,
+            -- module = "blink.cmp.sources.lsp",
+            score_offset = 100
+          }
+        }
       },
-      snippets = { preset = "default" },
+      snippets = { preset = "luasnip" },
       signature = {
         enabled = true,
         window = {
@@ -55,7 +62,7 @@ return {
       },
       fuzzy = {
         implementation = "lua",
-        sorts = { "exact", "score", "sort_text" },
+        sorts = { "exact", "score", "kind", "sort_text" },
       },
     },
   },

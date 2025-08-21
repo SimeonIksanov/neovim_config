@@ -38,6 +38,12 @@ return {
         useLibraryCodeForTypes = true,
         diagnosticMode = "openFilesOnly",
         autoImportCompletions = true,
+        inlayHints = {
+          variableTypes = true,
+          callArgumentNames = true,
+          functionReturnTypes = true,
+          autoFormatStrings = true,
+        },
       },
     },
   },
