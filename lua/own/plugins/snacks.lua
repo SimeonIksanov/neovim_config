@@ -25,7 +25,7 @@ return {
       },
     },
     keys = {
-      { "<leader><space>", function() Snacks.picker.pick() end, desc = "Smart find files", },
+      { "<leader><space>", function() Snacks.picker.pick({layout = "select"}) end, desc = "Smart find files", },
       { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer", },
       { "<leader>,", function() Snacks.picker.buffers({ current = false, sort_lastused = true, layout = "select" }) end, desc = "Buffers", },
       { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep", },

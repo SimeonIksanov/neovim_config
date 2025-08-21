@@ -3,6 +3,7 @@ vim.lsp.enable({
   "roslyn",
   "vscode-json-language-server",
   "basedpyright",
+  -- "ruff"
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {

@@ -16,6 +16,11 @@ return {
           treesitter = true,
           treesitter_context = true,
         },
+        highlight_overrides = {
+          mocha = function(mocha)
+            return { Folded = { bg = "#25293C" } }
+          end
+        }
       })
       vim.cmd("colorscheme catppuccin")
     end,

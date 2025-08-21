@@ -16,7 +16,7 @@ return {
         },
         lualine_x = { "lsp_status", "encoding", "fileformat", "filetype" },
       },
-      inactive_sessions = {
+      inactive_sections = {
         lualine_c = {
           {
             "filename",
