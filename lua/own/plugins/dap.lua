@@ -1,3 +1,14 @@
+-- this is very important !!!
+-- on windows 
+-- you have to :set noshellslash
+-- or netcoredbg is unable to find breakpoints
+-- https://github.com/mfussenegger/nvim-dap/issues/1337#issuecomment-2361039620
+--
+
+local apply_fix = function()
+  vim.cmd("set noshellslash")
+end
+
 return {
   {
     "mfussenegger/nvim-dap",
@@ -5,14 +16,16 @@ return {
       "rcarriga/nvim-dap-ui",
       "nvim-neotest/nvim-nio",
     },
-    config = function()
+   config = function()
       local dap = require("dap")
       local dapui = require("dapui")
 
       dapui.setup()
+      dap.set_log_level('DEBUG')
       dap.adapters.coreclr = {
         type = "executable",
         command = "C:\\Users\\Simeon\\AppData\\Local\\nvim-data\\mason\\packages\\netcoredbg\\netcoredbg\\netcoredbg.exe",
+        -- command = "netcoredbg.cmd",
         args = { "--interpreter=vscode" },
       }
       dap.configurations.cs = {
@@ -42,12 +55,12 @@ return {
       local dap = require("dap")
       -- local dapui = require("dapui")
       local mappings = {
-        { "<f5>", dap.continue, {} },
-        { "<f17>", dap.terminate, { desc = "Stop" } }, -- shift f5
-        { "<f9>", dap.toggle_breakpoint, { desc = "Set breakpoint" } },
-        { "<f10>", dap.step_over, { desc = "Step Over" } },
-        { "<f11>", dap.step_into, { desc = "Step Into" } },
-        { "<f23>", dap.step_out, { desc = "Step Out" } }, -- shift f11
+        { "<leader>dc", function() apply_fix() dap.continue() end, {} },
+        { "<leader>dt", dap.terminate, { desc = "Stop" } },
+        { "<leader>db", dap.toggle_breakpoint, { desc = "Set breakpoint" } },
+        { "<leader>dj", dap.step_over, { desc = "Step Over" } },
+        { "<leader>dl", dap.step_into, { desc = "Step Into" } },
+        { "<leader>dk", dap.step_out, { desc = "Step Out" } },
       }
       return mappings
     end,

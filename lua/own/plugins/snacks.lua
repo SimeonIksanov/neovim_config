@@ -40,7 +40,7 @@ return {
       { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent", },
       { "<leader>fh", function() Snacks.picker.help() end, desc = "Recent", },
       -- lsp
-      { "<leader>ld", function() Snacks.picker.diagnostics_buffer() end, desc = "Diagnostics: File", },
+      -- { "<leader>ld", function() Snacks.picker.diagnostics_buffer() end, desc = "Diagnostics: File", },
       { "<leader>lD", function() Snacks.picker.diagnostics() end, desc = "Diagnostics: File", },
       { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition", },
       { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration", },

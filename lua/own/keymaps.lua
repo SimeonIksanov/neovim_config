@@ -1,7 +1,6 @@
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<space>", "<nop>", opts)
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<cr>", opts)
-
 vim.keymap.set("i", "jj", "<Esc>", opts)
 vim.keymap.set("i", "jk", "<Esc>", opts)
 
@@ -23,3 +22,4 @@ vim.keymap.set("n", "n", "nzz", opts)
 vim.keymap.set("n", "N", "Nzz", opts)
 vim.keymap.set("n", "*", "*zz", opts)
 vim.keymap.set("n", "#", "#zz", opts)
+vim.keymap.set("n", "<leader>ld", "<cmd>lua vim.diagnostic.open_float()<cr>")

@@ -9,7 +9,7 @@ return {
     },
     config = function()
       require("neotest").setup({
-        log_level = vim.log.levels.TRACE,
+        -- log_level = vim.log.levels.TRACE,
         adapters = {
           require("neotest-vstest"),
         },
