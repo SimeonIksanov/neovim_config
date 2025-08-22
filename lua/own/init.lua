@@ -1,4 +1,5 @@
 require("own.functions")
+require("own.autocommands")
 
 require("own.neovide")
 require("own.options")

@@ -30,7 +30,7 @@ return {
       { "<leader>,", function() Snacks.picker.buffers({ current = false, sort_lastused = true, layout = "select" }) end, desc = "Buffers", },
       { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep", },
       -- find
-      -- { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers", },
+      { "<leader>fb", function() Snacks.picker.buffers({layout = "select"}) end, desc = "Buffers", },
       { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find config files", },
       { "<leader>ff", function() Snacks.picker.files() end, desc = "Find files", },
       { "<leader>fs", function() Snacks.picker.smart() end, desc = "Smart find files", },
