@@ -11,7 +11,12 @@ return {
       require("neotest").setup({
         -- log_level = vim.log.levels.TRACE,
         adapters = {
-          require("neotest-vstest"),
+          -- require("neotest-vstest"),
+          require("neotest-vstest")({
+            dap_settings = {
+              type="coreclr"
+            }
+          }),
         },
       })
     end,
