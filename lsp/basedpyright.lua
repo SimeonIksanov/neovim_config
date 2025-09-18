@@ -1,18 +1,23 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/basedpyright.lua
-local function set_python_path(path)
+local function set_python_path(command)
+  local path = command.args
   local clients = vim.lsp.get_clients({
     bufnr = vim.api.nvim_get_current_buf(),
     name = "basedpyright",
   })
+
   for _, client in ipairs(clients) do
     if client.settings then
+      local origin = client.settings.python or {}
+      local update = { pythonPath = path }
       ---@diagnostic disable-next-line: param-type-mismatch
-      client.settings.python = vim.tbl_deep_extend("force", client.settings.python or {}, { pythonPath = path })
+      client.settings.python = vim.tbl_deep_extend("force", origin, update)
     else
-      client.config.settings = vim.tbl_deep_extend("force", client.config.settings, { python = { pythonPath = path } })
+      local origin = client.config.settings
+      local update = { python = { pythonPath = path } }
+      client.config.settings = vim.tbl_deep_extend("force", origin, update)
     end
-    -- client.notify(self, "workspace/didChangeConfiguration", { settings = nil })
-    vim.lsp.client.notify(client, "workspace/didChangeConfiguration", { settings = nil })
+    client:notify("workspace/didChangeConfiguration", { settings = nil })
   end
 end
 
@@ -34,17 +39,21 @@ return {
   settings = {
     basedpyright = {
       analysis = {
+        autoFormatStrings = true,
         autoSearchPaths = true,
-        useLibraryCodeForTypes = true,
-        diagnosticMode = "openFilesOnly",
         autoImportCompletions = true,
+        diagnosticMode = "openFilesOnly",
+        logLevel = "Information",
         inlayHints = {
           variableTypes = true,
           callArgumentNames = true,
           functionReturnTypes = true,
-          autoFormatStrings = true,
         },
+        useLibraryCodeForTypes = true,
       },
+    },
+    python = {
+      pythonPath = ".venv/bin/python",
     },
   },
   on_attach = function(client, bufnr)
